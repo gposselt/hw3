@@ -4,8 +4,6 @@
 #define NULL 0
 #endif
 
-#include <stdexcept>
-
 /**
  * Node struct for both problems
  */
@@ -86,14 +84,8 @@ Node* llfilter(Node*& head, Comp pred)
     // Provide your implementation below
     //*********************************************
 
-    //handle base case
-    // if (head->next == NULL) {
-    //     return head;
-    // }
 
-    // Node* next = head->next;
-
-    if (head == NULL) {
+    if (head == nullptr) {
         return head;
     }
 
