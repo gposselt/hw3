@@ -69,7 +69,11 @@ void dealloc(Node* head)
 
 
 
-
+struct comp {
+    bool operator()(int i) const {
+        return i % 2 == 0;
+    }
+};
 
 int main(int argc, char* argv[])
 {
@@ -87,9 +91,29 @@ int main(int argc, char* argv[])
 
     // Test out your linked list code
 
+    llfilter(head, comp{});
+
+    print(head);
+
+    dealloc(head);
+
+    head = readList(argv[1]);
 
 
-    
+    Node* smaller = NULL;
+    Node* larger = NULL;
+
+
+    llpivot(head, smaller, larger, 8);
+
+    cout << "smaller: ";
+    print(smaller);
+
+    cout << endl << "larger: ";
+    print(larger);
+
+    dealloc(head);
+
     return 0;
 
 }
